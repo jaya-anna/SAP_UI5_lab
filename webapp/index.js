@@ -1,17 +1,9 @@
-sap.ui.define(
-  ["sap/m/Text", "sap/m/Button", "sap/m/MessageToast"],
-  function (Text, Button, MessageToast) {
-    "use strict";
+sap.ui.define(["sap/ui/core/mvc/XMLView"], function (XMLView) {
+  "use strict";
 
-    new Text({
-      text: "Hello UI5!",
-    }).placeAt("content");
-
-    new Button({
-      text: "Ready...",
-      press: function () {
-        MessageToast.show("Taaadaaa");
-      },
-    }).placeAt("content");
-  }
-);
+  XMLView.create({
+    viewName: "quickstart.view.App",
+  }).then(function (oView) {
+    oView.placeAt("content");
+  });
+});
